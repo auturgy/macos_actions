@@ -16,10 +16,10 @@ str="xcode-select: note: install requested for command line developer tools"
 while [[ "$check" == "$str" ]];
 do
   xcode-select --install
-  exit;  
+  exit;
 done
 
-brew tap auturgy/macos_actions/homebrew-ardupilot
+brew tap auturgy/macos_actions/ardupilot
 brew update
 brew install gcc-arm-none-eabi
 brew install gawk
