@@ -9,7 +9,15 @@ else
 fi
 
 #install xconde dependencies
-xcode-select --install
+
+check=$((xcode-\select --install) 2>&1)
+echo $check
+str="xcode-select: note: install requested for command line developer tools"
+while [[ "$check" == "$str" ]];
+do
+  xcode-select --install
+  exit;  
+done
 
 brew tap auturgy/macos_actions/homebrew-ardupilot
 brew update
