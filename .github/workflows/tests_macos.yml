@@ -20,7 +20,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install ArduPilot Dependencies
-        run: ./install-prereqs-mac.sh
+        run: sudo ./install-prereqs-mac.sh
         shell: bash
 
       - name: Build CI MacOS
