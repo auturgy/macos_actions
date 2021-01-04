@@ -21,7 +21,7 @@ else
 fi
 
 #install necessary homebrew packages
-brew tap auturgy/ardupilot
+brew tap ardupilot/ardupilot
 brew update
 brew install gcc-arm-none-eabi
 brew install gawk
