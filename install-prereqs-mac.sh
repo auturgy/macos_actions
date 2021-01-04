@@ -22,8 +22,7 @@ brew install ccache
 
 CCACHE_PATH=$(which ccache)
 echo "Registering STM32 Toolchain for ccache"
-sudo ln -s -f $CCACHE_PATH /usr/lib/ccache/arm-none-eabi-g++
-sudo ln -s -f $CCACHE_PATH /usr/lib/ccache/arm-none-eabi-gcc
+sudo ln -s -f $CCACHE_PATH /usr/local/opt/ccache/libexec
 echo "Done!"
 
 echo "Checking pip..."
