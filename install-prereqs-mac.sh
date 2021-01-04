@@ -1,14 +1,6 @@
 #!/bin/bash
-echo "Checking homebrew..."
-$(which -s brew)
-if [[ $? != 0 ]] ; then
-    echo "installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-    echo "Homebrew installed"
-fi
 
-#install xconde dependencies
+#install xcode if missing
 check=$((xcode-\select --install) 2>&1)
 echo $check
 str="xcode-select: note: install requested for command line developer tools"
@@ -18,6 +10,17 @@ do
   exit;
 done
 
+#install homebrew if missing
+echo "Checking homebrew..."
+$(which -s brew)
+if [[ $? != 0 ]] ; then
+    echo "installing homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    echo "Homebrew installed"
+fi
+
+#install necessary homebrew packages
 brew tap auturgy/ardupilot
 brew update
 brew install gcc-arm-none-eabi
