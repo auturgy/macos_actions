@@ -9,7 +9,6 @@ else
 fi
 
 #install xconde dependencies
-
 check=$((xcode-\select --install) 2>&1)
 echo $check
 str="xcode-select: note: install requested for command line developer tools"
@@ -19,11 +18,11 @@ do
   exit;
 done
 
-brew tap auturgy/macos_actions/ardupilot
+brew tap auturgy/ardupilot
 brew update
 brew install gcc-arm-none-eabi
 brew install gawk
-brew isntall ccache
+brew install ccache
 
 CCACHE_PATH=$(which ccache)
 echo "Registering STM32 Toolchain for ccache"
