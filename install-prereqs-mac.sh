@@ -1,14 +1,7 @@
 #!/bin/bash
 
 #install xcode if missing
-echo "Checking xcode..."
-$(/usr/bin/xcodebuild -version)
-if [[ $? != 0 ]] ; then
-    echo "installing xcode..."
-    xcode-select --install
-else
-    echo "xcode installed"
-fi
+xcode-select --install
 
 #install homebrew if missing
 echo "Checking homebrew..."
