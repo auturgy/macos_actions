@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #install xcode if missing
-check=$((xcode-\select --install) 2>&1)
-echo $check
-str="xcode-select: note: install requested for command line developer tools"
-while [[ "$check" == "$str" ]];
-do
-  xcode-select --install
-  exit;
-done
+echo "Checking xcode..."
+$(which -s xcode)
+if [[ $? != 0 ]] ; then
+    echo "installing xcode..."
+    xcode-select --install
+else
+    echo "xcode installed"
+fi
 
 #install homebrew if missing
 echo "Checking homebrew..."
