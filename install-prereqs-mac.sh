@@ -2,7 +2,7 @@
 
 #install xcode if missing
 echo "Checking xcode..."
-$(/Developer/usr/bin/xcodebuild -version)
+$(/usr/bin/xcodebuild -version)
 if [[ $? != 0 ]] ; then
     echo "installing xcode..."
     xcode-select --install
